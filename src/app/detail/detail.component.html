@@ -1,1 +1,31 @@
-<p>detail works!</p>
+<p-progressSpinner *ngIf="!loaded"></p-progressSpinner>
+<div class="row" *ngIf="movieDetail">
+    <div class="col-md-4" style="width:100px;float:left">
+      <img src="{{ movieDetail.poster }}"  alt="" class="thumbnail">
+    </div>
+    <div class="col-md-8" style=" margin-left: 400px;width:500px">
+      <h2>{{movieDetail.title}}
+        <span class="rate">
+                        <span>{{ movieDetail.imdb_rating}}</span> /10
+                   <i class="material-icons">star</i> </span>
+      </h2>
+      <div >
+        {{movieDetail.released_on | date}} | {{movieDetail.length}} | {{movieDetail.director}}
+      </div>
+      <div >
+        <span class="col-md-3">
+          Cast :
+        </span>
+        <span  *ngFor="let actor of movieDetail.cast">
+          {{actor}},
+        </span>
+      </div><br><br>
+      Movie Description :
+      <span>
+        {{movieDetail.overview}}
+      </span>
+
+    </div>
+  </div>
+
+

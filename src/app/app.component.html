@@ -1,9 +1,11 @@
 
 
-<mat-toolbar color="primary">
-  <h1>
-    My Angular Store
-  </h1>
+<mat-toolbar>
+  <div style="padding:8px 0 0 10px; flex:1;">
+    <div class="mat-subheading-2" style="margin-bottom:2px;">WOOKIE</div>
+    <div class="mat-subheading-2" style="line-height:.6rem;">MOVIES</div>
+  </div>
+  <button class="btn" (click)="getMovie()"><i class="material-icons">search</i></button><input class="search-control"   type="text" placeholder="Search" [(ngModel)]="searchText" #searchbar>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
